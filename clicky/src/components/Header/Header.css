@@ -1,0 +1,11 @@
+.header {
+  height: 100px;
+  background-color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+
+
+
+}
