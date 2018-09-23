@@ -18,50 +18,12 @@ class App extends Component {
     
   }
   handleClick = id => {
-    if (this.state.clicked.indexOf(id) === -1) {
-      this.handleIncrement();
-      this.setState({ clicked: this.state.clicked.concat(id) });
-    } else {
-      this.handleReset();
-    }
-  };
-
-  handleIncrement = () => {
-    const newScore = this.state.currentScore + 1;
-    this.setState({
-      currentScore: newScore,
-      correctIncorrect: "You guessed correctly!"
-    });
-    if (newScore >= this.state.topScore) {
-      this.setState({ topScore: newScore });
-    }
-    else if (newScore === 12) {
-      this.setState({ correctIncorrect: "You win!" });
-    }
-    this.handleShuffle();
-  };
-
-  handleReset = () => {
-    this.setState({
-      currentScore: 0,
-      topScore: this.state.topScore,
-      correctIncorrect: "You guessed incorrectly!",
-      clicked: []
-    });
-    this.handleShuffle();
-  };
-
-  handleShuffle = () => {
-    let shuffledFriends = randomFriends(friends);
-    this.setState({ friends: shuffledFriends });
+    //cycle through and find the card with the id that is passes through
+    //you have to see if its clicked on
+    //if clicked then tells them they loose
+    //reset the cards
+    //if it hasnt been clicked on then it increase score, reshuffle and add property to the on that has been clicked on and set property to the one that has been clicked on to true
     
-  // handleClick = id => {
-  //   //cycle through and find the card with the id that is passes through
-  //   //you have to see if its clicked on
-  //   //if clicked then tells them they loose
-  //   //reset the cards
-  //   //if it hasnt been clicked on then it increase score, reshuffle and add property to the on that has been clicked on and set property to the one that has been clicked on to true
-
   }
 
   render() {
